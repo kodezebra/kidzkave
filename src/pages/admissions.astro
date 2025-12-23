@@ -1,0 +1,60 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PageHeader from "../components/shared/PageHeader.astro";
+import FeatureSection from "../components/shared/FeatureSection.astro";
+import Button from "../components/shared/Button.astro";
+import CallToAction from "../components/home/CallToAction.astro";
+---
+
+<Layout
+  title="Admissions | Kids Kave Junior School"
+  description="Join our school community. Learn about the admissions process at Kids Kave Junior School for our daycare, nursery, and primary programs."
+>
+  <PageHeader
+    title="Join Our School"
+    subtitle="We welcome you to join the Kids Kave Junior School family. Our admissions process is designed to be simple and supportive."
+  />
+
+  <section class="py-16 sm:py-20">
+    <FeatureSection>
+      <div class="grid grid-cols-1 gap-y-12 lg:grid-cols-3 lg:gap-x-8">
+        <div class="lg:col-span-2">
+          <h2 class="font-heading text-3xl font-bold text-heading">Our Admissions Process</h2>
+          <div class="mt-8 space-y-8 text-text-muted">
+            <p>
+              Enrolling your child at Kids Kave is a straightforward process. We are here to guide you every step of the way.
+            </p>
+            <ol class="list-decimal list-inside space-y-4">
+              <li>
+                <strong>Inquiry:</strong> Contact us to express your interest, ask questions, and learn more about our programs.
+              </li>
+              <li>
+                <strong>School Visit:</strong> We encourage parents to visit our campus to see our facilities and meet our team. Please call us to schedule a tour.
+              </li>
+              <li>
+                <strong>Application:</strong> You will be provided with an application form to fill out.
+              </li>
+              <li>
+                <strong>Assessment:</strong> For primary school entrants, a simple assessment may be conducted to understand the child's learning needs.
+              </li>
+              <li>
+                <strong>Offer & Acceptance:</strong> Once approved, you will receive an admission offer.
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div class="rounded-lg border border-border bg-bg-soft p-8">
+          <h3 class="font-heading text-xl font-bold text-heading">Get Started</h3>
+          <p class="mt-2 text-text-muted">
+            Ready to take the next step? Contact us to schedule a visit or ask any questions.
+          </p>
+          <div class="mt-6">
+            <Button href="/contact">Contact Us</Button>
+          </div>
+        </div>
+      </div>
+    </FeatureSection>
+  </section>
+  <CallToAction />
+</Layout>
+

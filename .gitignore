@@ -1,0 +1,45 @@
+# Node.js
+node_modules/
+npm-debug.log
+.pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.npm/
+.yarn/
+.pnpm/
+
+# Astro build output
+dist/
+
+# Editor directories and files
+.idea/
+.vscode/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# npm package manager cache
+.npm/
+
+# pnpm-lock.yaml for pnpm projects
+pnpm-lock.yaml
+
+# Log files
+*.log
+
+# Misc
+.cache/
+.astro/

@@ -1,0 +1,32 @@
+---
+const {
+  title = "Kids Kave Junior School",
+  description = "A place to learn, grow, and be inspired.",
+  canonical,
+} = Astro.props;
+
+const siteName = "Kids Kave Junior School";
+const defaultImage = "/images/og-default.jpg";
+---
+
+<meta charset="utf-8" />
+
+<!-- Primary Meta -->
+<title>{title}</title>
+<meta name="description" content={description} />
+
+<!-- Canonical -->
+{canonical && <link rel="canonical" href={canonical} />}
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content={siteName} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={defaultImage} />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={defaultImage} />

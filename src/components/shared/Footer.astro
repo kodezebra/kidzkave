@@ -1,0 +1,55 @@
+---
+import { NAV_LINKS } from '../../utils/navigation';
+import FacebookIcon from '../../assets/icons/facebook.svg?raw';
+import InstagramIcon from '../../assets/icons/instagram.svg?raw';
+import XIcon from '../../assets/icons/x.svg?raw';
+
+const SOCIAL_LINKS = [
+  { href: '#', icon: FacebookIcon, label: 'Facebook' },
+  { href: 'https://instagram.com/kids.kave.nursery', icon: InstagramIcon, label: 'Instagram' },
+  { href: '#', icon: XIcon, label: 'X' },
+]
+---
+<footer class="border-t border-border bg-bg-soft">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-2 gap-8 py-16 md:grid-cols-4">
+      <div class="col-span-2 md:col-span-1">
+        <h3 class="font-heading text-lg font-bold text-heading">Kids Kave Junior School</h3>
+        <p class="mt-2 text-sm text-text-muted">A place to learn, grow, and be inspired.</p>
+      </div>
+      <div>
+        <h3 class="font-semibold text-heading">Quick Links</h3>
+        <ul class="mt-4 space-y-2">
+          {NAV_LINKS.map(link => (
+            <li>
+              <a href={link.href} class="text-sm text-text-muted hover:text-primary">{link.text}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-semibold text-heading">Contact Us</h3>
+        <address class="mt-4 space-y-2 not-italic text-sm text-text-muted">
+          <p>Mukono, Namumira</p>
+          <p>
+            <a href="tel:+256784607792" class="hover:text-primary">+256 784 607 792</a>
+          </p>
+        </address>
+      </div>
+    </div>
+    <div class="flex flex-col items-center justify-between border-t border-border py-6 sm:flex-row">
+      <p class="text-sm text-text-muted">
+        © {new Date().getFullYear()} Kids Kave Junior School. All rights reserved.
+      </p>
+      <div class="mt-4 flex items-center space-x-4 sm:mt-0">
+        {SOCIAL_LINKS.map(link => (
+          <a href={link.href} class="text-text-muted hover:text-primary">
+            <Fragment set:html={link.icon} />
+            <span class="sr-only">{link.label}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+</footer>
+

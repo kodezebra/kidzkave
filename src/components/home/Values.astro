@@ -1,0 +1,54 @@
+---
+const values = [
+  {
+    title: "Warm & Nurturing",
+    description:
+      "We provide a safe, caring environment where every child feels valued, supported, and encouraged to grow with confidence.",
+  },
+  {
+    title: "Disciplined & Academic",
+    description:
+      "Strong routines, respectful behavior, and a structured curriculum ensure our learners develop focus, responsibility, and academic excellence.",
+  },
+  {
+    title: "Modern & Innovative",
+    description:
+      "Through modern teaching aids, hands-on activities, and agriculture programs, we prepare children to face real-world challenges.",
+  },
+  {
+    title: "Community-Focused",
+    description:
+      "We work closely with families and the wider community to nurture well-rounded children who care about others and their environment.",
+  },
+];
+---
+<section class="bg-bg border-t border-border">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    
+    <!-- Section Header -->
+    <div class="max-w-2xl mb-12">
+      <h2 class="font-heading text-3xl font-bold text-heading">
+        What We Stand For
+      </h2>
+      <p class="mt-4 text-text">
+        At Kids Kave Junior School, our values guide how we teach, care, and grow
+        together as a learning community.
+      </p>
+    </div>
+
+    <!-- Values Grid -->
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+      {values.map(value => (
+        <div class="rounded-lg border border-border p-6 bg-bg-soft">
+          <h3 class="font-semibold text-heading mb-2">
+            {value.title}
+          </h3>
+          <p class="text-sm text-text leading-relaxed">
+            {value.description}
+          </p>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

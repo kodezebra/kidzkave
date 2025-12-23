@@ -1,0 +1,49 @@
+---
+const facilities = [
+  {
+    title: "Safe & Spacious Classrooms",
+    description:
+      "Our classrooms are designed to be safe, clean, and child-friendly, creating an environment where learners can focus and feel comfortable.",
+  },
+  {
+    title: "Outdoor & Practical Learning",
+    description:
+      "Children engage in outdoor activities and agriculture programs that promote responsibility, teamwork, and practical life skills.",
+  },
+  {
+    title: "Secure School Environment",
+    description:
+      "We prioritize the safety of every child through controlled access, supervision, and a caring school community.",
+  },
+];
+---
+<section class="bg-bg border-t border-border">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+
+    <!-- Section Header -->
+    <div class="max-w-2xl mb-12">
+      <h2 class="font-heading text-3xl font-bold text-heading">
+        Our Learning Environment
+      </h2>
+      <p class="mt-4 text-text">
+        We provide a safe, stimulating environment that supports academic learning,
+        creativity, and personal growth.
+      </p>
+    </div>
+
+    <!-- Facilities Grid -->
+    <div class="grid gap-8 md:grid-cols-3">
+      {facilities.map(item => (
+        <div class="rounded-lg border border-border p-6 bg-bg-soft">
+          <h3 class="font-semibold text-heading mb-2">
+            {item.title}
+          </h3>
+          <p class="text-sm text-text leading-relaxed">
+            {item.description}
+          </p>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

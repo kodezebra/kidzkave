@@ -1,0 +1,166 @@
+@import "tailwindcss";
+
+/* ======================================================
+   DESIGN TOKENS (TAILWIND v4) - VIBRANT & EDUCATIONAL PALETTE
+====================================================== */
+
+@theme {
+  --color-primary: hsl(216 85% 50%);     /* Bright blue - energetic & trustworthy */
+  --color-secondary: hsl(45 95% 60%);    /* Warm yellow - cheerful & engaging */
+  --color-accent: hsl(340 75% 60%);      /* Vibrant pink - playful & attention-grabbing */
+  
+  --color-bg: hsl(210 40% 98%);
+  --color-bg-soft: hsl(210 30% 96%);
+  --color-heading: hsl(222 47% 11%);
+  --color-text: hsl(215 25% 27%);        /* Darker for better readability */
+  --color-border: hsl(214 32% 91%);
+
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-heading: "Libre Baskerville", serif;
+
+  --radius-md: 0.5rem;
+}
+
+/* ======================================================
+   BASE
+====================================================== */
+
+@layer base {
+  body {
+    @apply bg-bg text-text font-sans antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-heading text-heading;
+  }
+}
+
+/* ======================================================
+   BUTTONS (UPDATED WITH PALETTE 1)
+====================================================== */
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center
+           rounded-md px-6 py-3
+           text-sm font-semibold
+           bg-primary text-white
+           transition
+           hover:bg-primary/90
+           focus:outline-none focus:ring-2 focus:ring-primary/40;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center
+           rounded-md px-6 py-3
+           text-sm font-semibold
+           bg-secondary text-heading
+           transition
+           hover:bg-secondary/90
+           focus:outline-none focus:ring-2 focus:ring-secondary/40;
+  }
+
+  .btn-accent {
+    @apply inline-flex items-center justify-center
+           rounded-md px-6 py-3
+           text-sm font-semibold
+           bg-accent text-white
+           transition
+           hover:bg-accent/90
+           focus:outline-none focus:ring-2 focus:ring-accent/40;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center
+           rounded-md px-6 py-3
+           text-sm font-semibold
+           border border-border text-primary
+           transition
+           hover:bg-primary/5
+           focus:outline-none focus:ring-2 focus:ring-primary/40;
+  }
+
+  .btn-inverse {
+    @apply inline-flex items-center justify-center
+           rounded-md px-6 py-3
+           text-sm font-semibold
+           bg-white text-primary
+           transition
+           hover:bg-white/90
+           focus:outline-none focus:ring-2 focus:ring-primary/40;
+  }
+}
+
+/* ======================================================
+   UTILITY CLASSES FOR PALETTE 1
+====================================================== */
+
+@layer utilities {
+  .text-primary { color: var(--color-primary); }
+  .text-secondary { color: var(--color-secondary); }
+  .text-accent { color: var(--color-accent); }
+  
+  .bg-primary { background-color: var(--color-primary); }
+  .bg-secondary { background-color: var(--color-secondary); }
+  .bg-accent { background-color: var(--color-accent); }
+  
+  .border-primary { border-color: var(--color-primary); }
+  .border-secondary { border-color: var(--color-secondary); }
+  .border-accent { border-color: var(--color-accent); }
+  
+  /* Special gradient for vibrant effects */
+  .gradient-vibrant {
+    background: linear-gradient(135deg, 
+      var(--color-primary) 0%, 
+      var(--color-accent) 100%);
+  }
+  
+  .gradient-warm {
+    background: linear-gradient(135deg, 
+      var(--color-secondary) 0%, 
+      var(--color-accent) 100%);
+  }
+}
+
+/* ======================================================
+   SPECIAL EFFECTS FOR VIBRANT PALETTE
+====================================================== */
+
+@layer base {
+  /* Subtle animation for interactive elements */
+  .btn-primary:hover,
+  .btn-accent:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 
+                0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+  
+  .btn-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 
+                0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+}
+
+@layer components {
+  .card-vibrant {
+    @apply bg-white rounded-lg border border-border p-6
+           transition-all duration-300
+           hover:shadow-lg hover:border-primary/20;
+  }
+  
+  .badge-primary {
+    @apply inline-flex items-center px-3 py-1
+           rounded-full text-xs font-semibold
+           bg-primary/10 text-primary;
+  }
+  
+  .badge-accent {
+    @apply inline-flex items-center px-3 py-1
+           rounded-full text-xs font-semibold
+           bg-accent/10 text-accent;
+  }
+}
