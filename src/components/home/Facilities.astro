@@ -1,26 +1,71 @@
 ---
+/* ============================
+   ICON IMPORTS (RELATIVE PATHS)
+   ============================ */
+import SchoolIcon from "../../assets/icons/school.svg"
+import SproutIcon from "../../assets/icons/sprout.svg"
+import ShieldCheckIcon from "../../assets/icons/shield-check.svg"
+import InfoIcon from "../../assets/icons/info.svg"
+
+/* ============================
+   COLOR MAP (TAILWIND SAFE)
+   ============================ */
+const colorMap = {
+  primary: {
+    text: "text-primary",
+    bgSoft: "bg-primary/5",
+    bgTag: "bg-primary/10",
+    border: "border-primary/10",
+  },
+  secondary: {
+    text: "text-secondary",
+    bgSoft: "bg-secondary/5",
+    bgTag: "bg-secondary/10",
+    border: "border-secondary/10",
+  },
+  accent: {
+    text: "text-accent",
+    bgSoft: "bg-accent/5",
+    bgTag: "bg-accent/10",
+    border: "border-accent/10",
+  },
+}
+
+/* ============================
+   FACILITIES DATA
+   ============================ */
 const facilities = [
   {
     title: "Safe & Spacious Classrooms",
     description:
       "Our classrooms are designed to be safe, clean, and child-friendly, creating an environment where learners can focus and feel comfortable.",
+    icon: SchoolIcon,
+    color: "primary",
+    tag: "Child-Focused Design",
   },
   {
     title: "Outdoor & Practical Learning",
     description:
       "Children engage in outdoor activities and agriculture programs that promote responsibility, teamwork, and practical life skills.",
+    icon: SproutIcon,
+    color: "secondary",
+    tag: "Hands-On Learning",
   },
   {
     title: "Secure School Environment",
     description:
       "We prioritize the safety of every child through controlled access, supervision, and a caring school community.",
+    icon: ShieldCheckIcon,
+    color: "accent",
+    tag: "Safety First Priority",
   },
-];
+]
 ---
-<section class="bg-bg border-t border-border">
+
+<section class="bg-bg-soft border-t border-border">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
 
-    <!-- Section Header -->
+    <!-- ================= Header ================= -->
     <div class="max-w-2xl mb-12">
       <h2 class="font-heading text-3xl font-bold text-heading">
         Our Learning Environment
@@ -31,18 +76,60 @@ const facilities = [
       </p>
     </div>
 
-    <!-- Facilities Grid -->
+    <!-- ================= Facilities Grid ================= -->
     <div class="grid gap-8 md:grid-cols-3">
-      {facilities.map(item => (
-        <div class="rounded-lg border border-border p-6 bg-bg-soft">
-          <h3 class="font-semibold text-heading mb-2">
-            {item.title}
-          </h3>
-          <p class="text-sm text-text leading-relaxed">
-            {item.description}
+      {facilities.map((item) => {
+        const c = colorMap[item.color]
+
+        return (
+          <div class="bg-white rounded-xl border border-border overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+
+            <!-- Card Header -->
+            <div class={`p-6 pb-4 ${c.bgSoft} ${c.border} border-b`}>
+              <div class="flex items-center">
+                <div class="mr-4">
+                  <item.icon class={`w-10 h-10 ${c.text}`} />
+                </div>
+                <h3 class="font-semibold text-heading text-lg">
+                  {item.title}
+                </h3>
+              </div>
+            </div>
+
+            <!-- Content -->
+            <div class="p-6">
+              <p class="text-text leading-relaxed mb-6">
+                {item.description}
+              </p>
+
+              <!-- Feature Tag -->
+              <div class={`inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold ${c.bgTag} ${c.text}`}>
+                {item.tag}
+              </div>
+            </div>
+
+          </div>
+        )
+      })}
+    </div>
+
+    <!-- ================= Supporting Statement ================= -->
+    <div class="mt-12 p-8 bg-white rounded-xl border border-border shadow-sm">
+      <div class="flex items-start">
+        <InfoIcon class="w-6 h-6 text-primary mt-1 mr-4 flex-shrink-0" />
+        <div>
+          <p class="text-text">
+            All our facilities are regularly maintained and upgraded to ensure they meet
+            both educational standards and the evolving needs of our students.
+            <a
+              href="/about/campus"
+              class="text-primary font-medium hover:underline ml-1"
+            >
+              Learn more about our campus improvements.
+            </a>
           </p>
         </div>
-      ))}
+      </div>
     </div>
 
   </div>

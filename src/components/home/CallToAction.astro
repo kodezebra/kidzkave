@@ -1,32 +1,95 @@
+---
+/* ============================
+   ICON IMPORTS (RELATIVE PATHS)
+   ============================ */
+import ClockIcon from "../../assets/icons/clock.svg"
+import CheckCircleIcon from "../../assets/icons/circle-check.svg"
+import EyeIcon from "../../assets/icons/eye.svg"
+import CurrencyIcon from "../../assets/icons/currency.svg"
+import PhoneIcon from "../../assets/icons/phone.svg"
+import CheckIcon from "../../assets/icons/check.svg"
+---
+
 <section class="bg-primary text-white">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-    <div class="max-w-3xl">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
 
-      <h2 class="font-heading text-3xl sm:text-4xl font-bold leading-tight">
-        Give Your Child a Strong Start at Kids Kave
-      </h2>
+    <!-- ================= Urgency Badge ================= -->
+    <div class="inline-flex items-center px-4 py-2 bg-white/20 rounded-full mb-8">
+      <ClockIcon class="w-4 h-4 mr-2 animate-pulse" />
+      <span class="text-sm font-semibold">
+        2024 Admissions Closing Soon
+      </span>
+    </div>
 
-      <p class="mt-4 text-lg text-white/90 leading-relaxed">
-        Join a caring school community that values discipline, modern learning,
-        and the all-round development of every child.
-      </p>
+    <h2 class="font-heading text-4xl sm:text-5xl font-bold leading-tight">
+      Secure Your Child's Place Today
+    </h2>
 
-      <div class="mt-8 flex flex-wrap gap-4">
-        <a
-          href="/admissions"
-          class="inline-flex items-center rounded-md bg-white px-6 py-3 text-sm font-semibold text-primary hover:bg-white/90 transition"
-        >
-          Admissions Open
-        </a>
+    <p class="mt-6 text-xl text-white/90 max-w-2xl mx-auto leading-relaxed">
+      Limited spaces available across all programs. Join Mukono's trusted learning community.
+    </p>
 
-        <a
-          href="/contact"
-          class="inline-flex items-center rounded-md border border-white/40 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10 transition"
-        >
-          Visit the School
-        </a>
-      </div>
+    <!-- ================= Primary Action ================= -->
+    <div class="mt-10">
+      <a
+        href="/admissions"
+        class="group inline-flex items-center justify-center gap-3 bg-white text-primary rounded-xl px-10 py-4 text-lg font-bold shadow-2xl hover:shadow-3xl hover:scale-105 transition-all duration-300"
+      >
+        <CheckCircleIcon class="w-6 h-6" />
+        Apply Now – It Only Takes 5 Minutes
+      </a>
+    </div>
+
+    <!-- ================= Secondary Options ================= -->
+    <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center items-center">
+
+      <a
+        href="/virtual-tour"
+        class="inline-flex items-center gap-2 text-white hover:text-secondary transition-colors"
+      >
+        <EyeIcon class="w-5 h-5" />
+        Take Virtual Tour
+      </a>
+
+      <span class="hidden sm:inline text-white/40">•</span>
+
+      <a
+        href="/fees"
+        class="inline-flex items-center gap-2 text-white hover:text-secondary transition-colors"
+      >
+        <CurrencyIcon class="w-5 h-5" />
+        View Fees Structure
+      </a>
+
+      <span class="hidden sm:inline text-white/40">•</span>
+
+      <a
+        href="/contact"
+        class="inline-flex items-center gap-2 text-white hover:text-secondary transition-colors"
+      >
+        <PhoneIcon class="w-5 h-5" />
+        Call +256 XXX XXX XXX
+      </a>
 
     </div>
+
+    <!-- ================= Assurance ================= -->
+    <div class="mt-12 pt-8 border-t border-white/20">
+      <p class="text-white/80 text-sm flex flex-wrap justify-center gap-x-4 gap-y-2">
+        <span class="inline-flex items-center gap-1">
+          <CheckIcon class="w-4 h-4" />
+          No application fee
+        </span>
+        <span class="inline-flex items-center gap-1">
+          <CheckIcon class="w-4 h-4" />
+          Flexible payment plans
+        </span>
+        <span class="inline-flex items-center gap-1">
+          <CheckIcon class="w-4 h-4" />
+          Sibling discounts available
+        </span>
+      </p>
+    </div>
+
   </div>
 </section>

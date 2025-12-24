@@ -1,60 +1,286 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import PageHeader from "../components/shared/PageHeader.astro";
-import FeatureSection from "../components/shared/FeatureSection.astro";
-import Button from "../components/shared/Button.astro";
 import CallToAction from "../components/home/CallToAction.astro";
+
+import PhoneIcon from "../assets/icons/phone.svg";
+import MapIcon from "../assets/icons/map-pin.svg";
+import FileIcon from "../assets/icons/file-text.svg";
+import CheckIcon from "../assets/icons/circle-check.svg";
 ---
 
 <Layout
   title="Admissions | Kids Kave Junior School"
-  description="Join our school community. Learn about the admissions process at Kids Kave Junior School for our daycare, nursery, and primary programs."
+  description="Join Kids Kave Junior School. Learn about our simple, supportive admissions process and how to enroll your child."
 >
-  <PageHeader
-    title="Join Our School"
-    subtitle="We welcome you to join the Kids Kave Junior School family. Our admissions process is designed to be simple and supportive."
-  />
 
-  <section class="py-16 sm:py-20">
-    <FeatureSection>
-      <div class="grid grid-cols-1 gap-y-12 lg:grid-cols-3 lg:gap-x-8">
-        <div class="lg:col-span-2">
-          <h2 class="font-heading text-3xl font-bold text-heading">Our Admissions Process</h2>
-          <div class="mt-8 space-y-8 text-text-muted">
-            <p>
-              Enrolling your child at Kids Kave is a straightforward process. We are here to guide you every step of the way.
-            </p>
-            <ol class="list-decimal list-inside space-y-4">
-              <li>
-                <strong>Inquiry:</strong> Contact us to express your interest, ask questions, and learn more about our programs.
-              </li>
-              <li>
-                <strong>School Visit:</strong> We encourage parents to visit our campus to see our facilities and meet our team. Please call us to schedule a tour.
-              </li>
-              <li>
-                <strong>Application:</strong> You will be provided with an application form to fill out.
-              </li>
-              <li>
-                <strong>Assessment:</strong> For primary school entrants, a simple assessment may be conducted to understand the child's learning needs.
-              </li>
-              <li>
-                <strong>Offer & Acceptance:</strong> Once approved, you will receive an admission offer.
-              </li>
-            </ol>
-          </div>
-        </div>
-        <div class="rounded-lg border border-border bg-bg-soft p-8">
-          <h3 class="font-heading text-xl font-bold text-heading">Get Started</h3>
-          <p class="mt-2 text-text-muted">
-            Ready to take the next step? Contact us to schedule a visit or ask any questions.
-          </p>
-          <div class="mt-6">
-            <Button href="/contact">Contact Us</Button>
-          </div>
-        </div>
-      </div>
-    </FeatureSection>
+  <!-- ================= HERO ================= -->
+  <section class="border-b border-border bg-bg-soft py-16 sm:py-20">
+    <div class="mx-auto max-w-2xl px-4 text-center">
+      <h1 class="font-heading text-4xl sm:text-5xl font-bold text-heading">
+        Join Our School
+      </h1>
+      <p class="mt-4 text-lg leading-8 text-text-muted">
+        We welcome you to the Kids Kave Junior School family. Our admissions
+        process is simple, supportive, and parent-friendly.
+      </p>
+    </div>
   </section>
-  <CallToAction />
-</Layout>
 
+  <!-- ================= ADMISSIONS PROCESS ================= -->
+  <section class="py-16 sm:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-3 gap-12">
+
+        <!-- Process -->
+        <div class="lg:col-span-2">
+          <h2 class="font-heading text-3xl font-bold text-heading mb-6">
+            Our Admissions Process
+          </h2>
+
+          <p class="text-text-muted mb-8 max-w-xl">
+            Enrolling your child at Kids Kave is straightforward. Our team is
+            available to guide you through each step.
+          </p>
+
+          <ol class="space-y-6">
+            <li class="flex gap-4">
+              <span class="flex items-center justify-center w-10 h-10 rounded-lg bg-primary/10 shrink-0">
+                <img src={PhoneIcon.src} alt="" class="w-5 h-5" />
+              </span>
+              <div>
+                <h3 class="font-semibold text-heading">Inquiry</h3>
+                <p class="text-text-muted">
+                  Contact us to express interest, ask questions, and learn more
+                  about our programs.
+                </p>
+              </div>
+            </li>
+
+            <li class="flex gap-4">
+              <span class="flex items-center justify-center w-10 h-10 rounded-lg bg-secondary/10 shrink-0">
+                <img src={MapIcon.src} alt="" class="w-5 h-5" />
+              </span>
+              <div>
+                <h3 class="font-semibold text-heading">School Visit</h3>
+                <p class="text-text-muted">
+                  Parents are encouraged to visit our campus and meet our team.
+                  Please call ahead to schedule a tour.
+                </p>
+              </div>
+            </li>
+
+            <li class="flex gap-4">
+              <span class="flex items-center justify-center w-10 h-10 rounded-lg bg-accent/10 shrink-0">
+                <img src={FileIcon.src} alt="" class="w-5 h-5" />
+              </span>
+              <div>
+                <h3 class="font-semibold text-heading">Application</h3>
+                <p class="text-text-muted">
+                  You will receive an application form to complete and submit.
+                </p>
+              </div>
+            </li>
+
+            <li class="flex gap-4">
+              <span class="flex items-center justify-center w-10 h-10 rounded-lg bg-primary/10 shrink-0">
+                <img src={CheckIcon.src} alt="" class="w-5 h-5" />
+              </span>
+              <div>
+                <h3 class="font-semibold text-heading">
+                  Assessment & Acceptance
+                </h3>
+                <p class="text-text-muted">
+                  For primary entrants, a simple assessment may be conducted.
+                  Successful applicants receive an admission offer.
+                </p>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+        
+
+        <!-- Get Started Card -->
+        <div class="rounded-2xl border border-border bg-bg-soft p-8 self-start">
+          <h3 class="font-heading text-xl font-bold text-heading">
+            Get Started
+          </h3>
+          <p class="mt-3 text-text-muted">
+            Ready to take the next step? Contact us to schedule a visit or ask
+            any questions.
+          </p>
+
+          <div class="mt-6 space-y-3">
+            <a
+              href="/contact"
+              class="block text-center rounded-xl bg-primary text-white font-semibold py-3 hover:bg-primary/90 transition"
+            >
+              Contact Us
+            </a>
+
+            <a
+              href="tel:+256XXXXXXXXX"
+              class="block text-center rounded-xl border border-border text-heading font-semibold py-3 hover:bg-bg transition"
+            >
+              Call +256 XXX XXX XXX
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FEES ================= -->
+<section class="py-16 sm:py-20">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+    <!-- Header -->
+    <div class="mx-auto max-w-2xl text-center mb-12">
+      <h2 class="font-heading text-3xl sm:text-4xl font-bold text-heading">
+        School Fees & Charges
+      </h2>
+      <p class="mt-4 text-text-muted">
+        Our fees are structured to remain affordable while maintaining quality
+        care and education.
+      </p>
+    </div>
+
+    <!-- One-time Fees -->
+    <div class="mb-12">
+      <h3 class="font-heading text-xl font-bold text-heading mb-4">
+        One-Time / Annual Fees
+      </h3>
+
+      <div class="overflow-hidden rounded-2xl border border-border">
+        <table class="w-full text-left border-collapse">
+          <thead class="bg-bg-soft">
+            <tr>
+              <th class="px-6 py-4 font-semibold text-heading">Item</th>
+              <th class="px-6 py-4 font-semibold text-heading">Amount (UGX)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-border">
+            <tr>
+              <td class="px-6 py-4">Registration (Nursery – P7)</td>
+              <td class="px-6 py-4 font-medium">20,000</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4">School Uniform</td>
+              <td class="px-6 py-4 font-medium">150,000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Term Fees -->
+    <div class="mb-12">
+      <h3 class="font-heading text-xl font-bold text-heading mb-4">
+        Termly School Fees
+      </h3>
+
+      <div class="overflow-hidden rounded-2xl border border-border">
+        <table class="w-full text-left border-collapse">
+          <thead class="bg-bg-soft">
+            <tr>
+              <th class="px-6 py-4 font-semibold text-heading">Section</th>
+              <th class="px-6 py-4 font-semibold text-heading">Amount (UGX)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-border">
+            <tr>
+              <td class="px-6 py-4">Nursery</td>
+              <td class="px-6 py-4 font-medium">250,000</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4">Primary (P1 – P7)</td>
+              <td class="px-6 py-4 font-medium">350,000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Optional Services -->
+    <div class="mb-12">
+      <h3 class="font-heading text-xl font-bold text-heading mb-4">
+        Optional Services
+      </h3>
+
+      <div class="overflow-hidden rounded-2xl border border-border">
+        <table class="w-full text-left border-collapse">
+          <thead class="bg-bg-soft">
+            <tr>
+              <th class="px-6 py-4 font-semibold text-heading">Service</th>
+              <th class="px-6 py-4 font-semibold text-heading">Cost</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-border">
+            <tr>
+              <td class="px-6 py-4">Lunch Program</td>
+              <td class="px-6 py-4 font-medium">100,000</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4">School Transport</td>
+              <td class="px-6 py-4 font-medium">Depends on distance</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Included Extras -->
+    <div class="rounded-2xl bg-bg-soft p-8 text-center">
+      <h3 class="font-heading text-xl font-bold text-heading mb-4">
+        Included at No Extra Cost
+      </h3>
+
+      <ul class="flex flex-col sm:flex-row justify-center gap-6 text-text-muted font-medium">
+        <li>✓ Swimming Lessons</li>
+        <li>✓ Bouncing Castle Activities</li>
+      </ul>
+
+      <p class="mt-4 text-sm text-text-muted">
+        These activities are included to support physical development and fun
+        learning experiences.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- ================= CAMPUS IMAGE ================= -->
+  <section class="py-16 sm:py-20 bg-bg-soft">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+        <div class="relative rounded-2xl overflow-hidden shadow-lg aspect-[4/3]">
+          <img
+            src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b"
+            alt="Welcoming school environment"
+            class="absolute inset-0 w-full h-full object-cover"
+            loading="lazy"
+          />
+        </div>
+
+        <div>
+          <h2 class="font-heading text-3xl font-bold text-heading mb-4">
+            A Warm, Welcoming Environment
+          </h2>
+          <p class="text-text-muted max-w-xl">
+            Our campus is designed to be safe, engaging, and child-friendly —
+            a place where learners feel comfortable, supported, and inspired
+            every day.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CTA ================= -->
+  <CallToAction />
+
+</Layout>

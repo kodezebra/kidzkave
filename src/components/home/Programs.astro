@@ -1,4 +1,44 @@
 ---
+/* ============================
+   ICON IMPORTS (RELATIVE PATHS)
+   ============================ */
+import BabyIcon from "../../assets/icons/baby.svg"
+import BookOpenIcon from "../../assets/icons/book-open.svg"
+import SproutIcon from "../../assets/icons/sprout.svg"
+import CheckIcon from "../../assets/icons/check.svg"
+import ArrowRightIcon from "../../assets/icons/arrow-right.svg"
+import InfoIcon from "../../assets/icons/info.svg"
+
+/* ============================
+   COLOR MAP (TAILWIND SAFE)
+   ============================ */
+const colorMap = {
+  primary: {
+    text: "text-primary",
+    bg: "bg-primary/10",
+    hoverText: "group-hover:text-primary",
+    accentBar: "bg-gradient-to-r from-primary to-primary/70",
+    link: "text-primary hover:text-primary/80",
+  },
+  accent: {
+    text: "text-accent",
+    bg: "bg-accent/10",
+    hoverText: "group-hover:text-accent",
+    accentBar: "bg-gradient-to-r from-accent to-accent/70",
+    link: "text-accent hover:text-accent/80",
+  },
+  secondary: {
+    text: "text-secondary",
+    bg: "bg-secondary/10",
+    hoverText: "group-hover:text-secondary",
+    accentBar: "bg-gradient-to-r from-secondary to-secondary/70",
+    link: "text-secondary hover:text-secondary/80",
+  },
+}
+
+/* ============================
+   PROGRAMS DATA
+   ============================ */
 const programs = [
   {
     title: "Nursery Section",
@@ -9,6 +49,10 @@ const programs = [
       "Creative play and social interaction",
       "Safe, caring classrooms",
     ],
+    icon: BabyIcon,
+    color: "primary",
+    age: "Ages 3–5 years",
+    href: "/nursery",
   },
   {
     title: "Primary Section (UNEB)",
@@ -19,6 +63,10 @@ const programs = [
       "Strong literacy and numeracy focus",
       "Disciplined, supportive learning culture",
     ],
+    icon: BookOpenIcon,
+    color: "accent",
+    age: "Ages 6–12 years",
+    href: "/primary",
   },
   {
     title: "Holistic Learning & Daycare",
@@ -29,40 +77,106 @@ const programs = [
       "Agriculture and practical life skills",
       "Safe full-day care for working parents",
     ],
+    icon: SproutIcon,
+    color: "secondary",
+    age: "Ages 1–12 years",
+    href: "/daycare",
   },
-];
+]
 ---
+
 <section class="bg-bg-soft border-t border-border">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
 
-    <!-- Section Header -->
-    <div class="max-w-2xl mb-12">
-      <h2 class="font-heading text-3xl font-bold text-heading">
+    <!-- ================= Header ================= -->
+    <div class="max-w-2xl mb-16">
+      <span class="inline-flex items-center px-4 py-2 bg-primary/10 text-primary font-semibold rounded-full mb-4">
+        Age-Specific Learning
+      </span>
+      <h2 class="font-heading text-4xl font-bold text-heading">
         Our Learning Programs
       </h2>
-      <p class="mt-4 text-text">
-        We offer a balanced approach to education that combines strong academics,
-        values-based learning, and practical skills for modern-day challenges.
+      <p class="mt-4 text-lg text-text">
+        A balanced approach combining strong academics, values-based learning, and practical skills.
       </p>
     </div>
 
-    <!-- Programs Grid -->
+    <!-- ================= Programs Grid ================= -->
     <div class="grid gap-8 md:grid-cols-3">
-      {programs.map(program => (
-        <div class="rounded-lg border border-border bg-bg p-6">
-          <h3 class="font-semibold text-xl text-heading mb-3">
-            {program.title}
-          </h3>
-          <p class="text-sm text-text mb-4 leading-relaxed">
-            {program.description}
-          </p>
-          <ul class="space-y-2 text-sm text-text-muted">
-            {program.points.map(point => (
-              <li>✔ {point}</li>
-            ))}
-          </ul>
+      {programs.map((program) => {
+        const c = colorMap[program.color]
+
+        return (
+          <div class="group relative bg-white rounded-xl border border-border p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+
+            <!-- Accent Bar -->
+            <div class={`absolute top-0 left-0 right-0 h-2 rounded-t-xl ${c.accentBar}`} />
+
+            <!-- Icon + Title -->
+            <div class="mb-6">
+              <div class={`w-14 h-14 rounded-xl flex items-center justify-center mb-4 ${c.bg}`}>
+                <program.icon class={`w-7 h-7 ${c.text}`} />
+              </div>
+              <h3 class={`font-bold text-2xl text-heading ${c.hoverText} transition-colors`}>
+                {program.title}
+              </h3>
+            </div>
+
+            <!-- Description -->
+            <p class="text-text mb-6 leading-relaxed">
+              {program.description}
+            </p>
+
+            <!-- Key Points -->
+            <ul class="space-y-3 mb-8">
+              {program.points.map((point) => (
+                <li class="flex items-start">
+                  <CheckIcon class={`w-5 h-5 mt-0.5 mr-3 flex-shrink-0 ${c.text}`} />
+                  <span class="text-text">{point}</span>
+                </li>
+              ))}
+            </ul>
+
+            <!-- Footer -->
+            <div class="pt-6 border-t border-border/50 flex items-center justify-between">
+              <span class="text-sm font-semibold text-text-muted">
+                {program.age}
+              </span>
+              <a
+                href={program.href}
+                class={`inline-flex items-center font-semibold ${c.link}`}
+              >
+                Details
+                <ArrowRightIcon class="ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </a>
+            </div>
+
+          </div>
+        )
+      })}
+    </div>
+
+    <!-- ================= Comparison Note ================= -->
+    <div class="mt-16 p-8 bg-gradient-to-r from-primary/5 to-accent/5 rounded-2xl border border-primary/20">
+      <div class="flex flex-col md:flex-row items-start md:items-center gap-6">
+        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
+          <InfoIcon class="w-6 h-6 text-white" />
         </div>
-      ))}
+        <div>
+          <h3 class="font-bold text-xl text-heading mb-2">
+            Flexible Enrollment Options
+          </h3>
+          <p class="text-text">
+            Many families combine programs to fit their needs. We work with you
+            to create the best learning path for your children.
+          </p>
+        </div>
+        <div class="md:ml-auto">
+          <a href="/contact" class="btn-outline px-6 py-3 whitespace-nowrap">
+            Discuss Options
+          </a>
+        </div>
+      </div>
     </div>
 
   </div>

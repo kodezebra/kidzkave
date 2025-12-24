@@ -1,51 +1,122 @@
 ---
+/* ICON IMPORTS */
+import HeartIcon from "../../assets/icons/heart.svg"
+import BookOpenIcon from "../../assets/icons/book-open.svg"
+import LightbulbIcon from "../../assets/icons/lightbulb.svg"
+import UsersIcon from "../../assets/icons/users.svg"
+
+/* VALUES DATA */
 const values = [
   {
     title: "Warm & Nurturing",
     description:
       "We provide a safe, caring environment where every child feels valued, supported, and encouraged to grow with confidence.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1546410531-bb4caa6b424d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    practice:
+      "Through sharing, listening exercises, and classroom responsibilities",
+    icon: HeartIcon,
   },
   {
     title: "Disciplined & Academic",
     description:
       "Strong routines, respectful behavior, and a structured curriculum ensure our learners develop focus, responsibility, and academic excellence.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    practice: "Goal-setting activities and celebrating personal achievements",
+    icon: BookOpenIcon,
   },
   {
     title: "Modern & Innovative",
     description:
       "Through modern teaching aids, hands-on activities, and agriculture programs, we prepare children to face real-world challenges.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    practice: "Honor systems and truth-telling rewards",
+    icon: LightbulbIcon,
   },
   {
     title: "Community-Focused",
     description:
       "We work closely with families and the wider community to nurture well-rounded children who care about others and their environment.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    practice: "Group projects and community service activities",
+    icon: UsersIcon,
   },
-];
+]
 ---
-<section class="bg-bg border-t border-border">
+
+<section class="bg-bg-soft">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-    
+
     <!-- Section Header -->
-    <div class="max-w-2xl mb-12">
-      <h2 class="font-heading text-3xl font-bold text-heading">
-        What We Stand For
+    <div class="max-w-3xl mx-auto text-center mb-16">
+      <div class="inline-flex items-center px-4 py-2 bg-primary/10 text-primary font-semibold rounded-full mb-6">
+        Our Foundation
+      </div>
+      <h2 class="font-heading text-5xl font-bold text-heading mb-6">
+        Values That Guide Us
       </h2>
-      <p class="mt-4 text-text">
-        At Kids Kave Junior School, our values guide how we teach, care, and grow
-        together as a learning community.
+      <p class="text-xl text-text leading-relaxed">
+        These principles shape every classroom, every activity, and every child's journey at Kids Kave.
       </p>
     </div>
 
     <!-- Values Grid -->
-    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-      {values.map(value => (
-        <div class="rounded-lg border border-border p-6 bg-bg-soft">
-          <h3 class="font-semibold text-heading mb-2">
-            {value.title}
-          </h3>
-          <p class="text-sm text-text leading-relaxed">
-            {value.description}
-          </p>
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+      {values.map((value, index) => (
+        <div class="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+
+          <!-- Image -->
+          <div class="relative h-48 overflow-hidden">
+            <img
+              src={value.imageUrl}
+              alt={`${value.title} at Kids Kave Junior School`}
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="absolute top-4 left-4 w-8 h-8 bg-white rounded-full flex items-center justify-center font-bold text-primary shadow-md">
+              {index + 1}
+            </div>
+          </div>
+
+          <!-- Content -->
+          <div class="p-6">
+
+            <!-- Icon + Title -->
+            <div class="flex items-center mb-4">
+              <div class="p-2 bg-primary/10 rounded-lg mr-3 group-hover:bg-primary/20 transition-colors">
+                <value.icon class="w-6 h-6 text-primary group-hover:scale-110 transition-transform" />
+              </div>
+              <h3 class="font-bold text-xl text-heading group-hover:text-primary transition-colors">
+                {value.title}
+              </h3>
+            </div>
+
+            <p class="text-text leading-relaxed mb-4">
+              {value.description}
+            </p>
+
+            <!-- Practice -->
+            {/* <div class="max-h-0 overflow-hidden group-hover:max-h-32 transition-all duration-500">
+              <div class="pt-4 border-t border-border/50">
+                <p class="text-sm text-primary font-semibold flex items-center gap-1">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  How we live this:
+                </p>
+                <p class="text-sm text-text mt-1">
+                  {value.practice}
+                </p>
+              </div>
+            </div> */}
+
+          </div>
+
+          {/* <div class="h-1 w-full bg-gradient-to-r from-primary to-accent opacity-50 group-hover:opacity-100 transition-opacity"></div> */}
         </div>
       ))}
     </div>

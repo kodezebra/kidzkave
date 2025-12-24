@@ -1,67 +1,188 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import PageHeader from "../components/shared/PageHeader.astro";
-import ContentSection from "../components/about/ContentSection.astro";
 import CallToAction from "../components/home/CallToAction.astro";
+
+import CheckIcon from "../assets/icons/circle-check.svg";
+import BookIcon from "../assets/icons/book-open.svg";
+import ShieldIcon from "../assets/icons/shield-check.svg";
+import ClockIcon from "../assets/icons/clock.svg";
 ---
 
 <Layout
   title="About Us | Kids Kave Junior School"
   description="Learn about Kids Kave Junior School, our values, learning approach, and commitment to nurturing well-rounded learners in Mukono."
 >
-  <PageHeader
-    title="A Nurturing Community for Young Learners"
-    subtitle="We are committed to creating a safe, inspiring environment where children are encouraged to learn, grow, and thrive — academically, socially, and emotionally."
-  />
 
-  <ContentSection title="Our Approach to Learning">
-    <p>
-      At Kids Kave Junior School, we offer a modern, holistic education that goes
-      beyond textbooks. While we follow the UNEB curriculum for our primary
-      section, we enrich learning through practical subjects such as agriculture,
-      creative activities, and the use of modern teaching aids.
-    </p>
-    <p>
-      Our goal is to nurture well-rounded learners — confident, curious,
-      disciplined, and equipped with the skills needed to face modern-day
-      challenges.
-    </p>
-  </ContentSection>
+  <!-- ================= HERO ================= -->
+  <section class="border-b border-border bg-bg-soft py-16 sm:py-20">
+    <div class="mx-auto max-w-2xl px-4 text-center">
+      <h1 class="font-heading text-4xl sm:text-5xl font-bold text-heading">
+        A Nurturing Community for Young Learners
+      </h1>
+      <p class="mt-4 text-lg text-text-muted">
+        We create a safe, inspiring environment where children grow academically,
+        socially, and emotionally.
+      </p>
+    </div>
+  </section>
 
-  <ContentSection title="Nursery & Primary Education">
-    <p>
-      Our nursery program focuses on early childhood development through
-      play-based learning, creativity, and guided exploration. We help young
-      learners build strong foundations in communication, confidence, and
-      independence.
-    </p>
-    <p>
-      Our primary school follows the UNEB curriculum while emphasizing strong
-      academic performance, critical thinking, practical life skills, and
-      discipline. Learners are guided to become responsible and self-motivated
-      individuals.
-    </p>
-  </ContentSection>
+  <!-- ================= OUR APPROACH ================= -->
+  <section class="py-16 sm:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
 
-  <ContentSection title="Values-Based, Inclusive Education">
-    <p>
-      Kids Kave Junior School is a values-based but non-denominational institution.
-      We promote respect, integrity, responsibility, and kindness while welcoming
-      families from all backgrounds. We believe character development is just as
-      important as academic success.
-    </p>
-  </ContentSection>
+        <!-- Image -->
+        <div class="relative rounded-2xl overflow-hidden shadow-lg aspect-[4/3]">
+          <img
+            src="https://images.unsplash.com/photo-1588072432836-e10032774350"
+            alt="Hands-on learning in classroom"
+            class="absolute inset-0 w-full h-full object-cover"
+            loading="lazy"
+          />
+        </div>
 
-  <ContentSection title="Supporting Busy Parents">
-    <p>
-      We understand the needs of the modern, busy parent. In addition to quality
-      education, we offer daycare services to ensure children are well cared for
-      in a safe and supportive environment while parents attend to their daily
-      commitments.
-    </p>
-  </ContentSection>
+        <!-- Content -->
+        <div>
+          <div class="flex items-center gap-4 mb-4">
+            <span class="flex items-center justify-center w-10 h-10 rounded-lg bg-primary/10">
+              <img src={CheckIcon.src} alt="" class="size-6" />
+            </span>
+            <h2 class="font-heading text-3xl font-bold text-heading">
+              Our Approach to Learning
+            </h2>
+          </div>
 
+          <p class="text-text-muted mb-4">
+            At Kids Kave Junior School, we offer a modern, holistic education that
+            goes beyond textbooks. While we follow the UNEB curriculum, learning
+            is enriched through agriculture, creativity, and modern teaching aids.
+          </p>
+
+          <p class="text-text-muted">
+            Our goal is to nurture confident, curious, and disciplined learners
+            prepared for real-life challenges.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= NURSERY & PRIMARY ================= -->
+  <section class="py-16 sm:py-20 bg-bg-soft">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center lg:grid-flow-col-dense">
+
+        <!-- Image -->
+        <div class="relative lg:col-start-2 rounded-2xl overflow-hidden shadow-lg aspect-[4/3]">
+          <img
+            src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf"
+            alt="Nursery and primary learners"
+            class="absolute inset-0 w-full h-full object-cover"
+            loading="lazy"
+          />
+        </div>
+
+        <!-- Content -->
+        <div>
+          <div class="flex items-center gap-4 mb-4">
+            <span class="flex items-center justify-center w-10 h-10 rounded-lg bg-secondary/10">
+              <img src={BookIcon.src} alt="" class="size-6" />
+            </span>
+            <h2 class="font-heading text-3xl font-bold text-heading">
+              Nursery & Primary Education
+            </h2>
+          </div>
+
+          <p class="text-text-muted mb-4">
+            Our nursery program focuses on early childhood development through
+            play-based learning, creativity, and guided exploration.
+          </p>
+
+          <p class="text-text-muted">
+            Our primary section follows the UNEB curriculum with emphasis on
+            academic excellence, discipline, and practical life skills.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= VALUES ================= -->
+  <section class="py-16 sm:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+        <!-- Image -->
+        <div class="relative rounded-2xl overflow-hidden shadow-lg aspect-[4/3]">
+          <img
+            src="https://images.unsplash.com/photo-1596495578065-6e0763fa1178"
+            alt="Inclusive and caring school environment"
+            class="absolute inset-0 w-full h-full object-cover"
+            loading="lazy"
+          />
+        </div>
+
+        <!-- Content -->
+        <div>
+          <div class="flex items-center gap-4 mb-4">
+            <span class="flex items-center justify-center w-10 h-10 rounded-lg bg-accent/10">
+              <img src={ShieldIcon.src} alt="" class="size-6" />
+            </span>
+            <h2 class="font-heading text-3xl font-bold text-heading">
+              Values-Based, Inclusive Education
+            </h2>
+          </div>
+
+          <p class="text-text-muted">
+            We are a values-based but non-denominational school. We promote
+            respect, integrity, responsibility, and kindness while welcoming
+            families from all backgrounds.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= DAYCARE ================= -->
+  <section class="py-16 sm:py-20 bg-bg-soft">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center lg:grid-flow-col-dense">
+
+        <!-- Image -->
+        <div class="relative lg:col-start-2 rounded-2xl overflow-hidden shadow-lg aspect-[4/3]">
+          <img
+            src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c"
+            alt="Safe daycare environment"
+            class="absolute inset-0 w-full h-full object-cover"
+            loading="lazy"
+          />
+        </div>
+
+        <!-- Content -->
+        <div>
+          <div class="flex items-center gap-4 mb-4">
+            <span class="flex items-center justify-center w-10 h-10 rounded-lg bg-primary/10">
+              <img src={ClockIcon.src} alt="" class="size-6" />
+            </span>
+            <h2 class="font-heading text-3xl font-bold text-heading">
+              Supporting Busy Parents
+            </h2>
+          </div>
+
+          <p class="text-text-muted">
+            Alongside quality education, we provide reliable daycare services to
+            ensure children are safe, cared for, and supported throughout the day.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CTA ================= -->
   <CallToAction />
+
 </Layout>
-
-
