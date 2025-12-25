@@ -6,6 +6,7 @@ import CheckIcon from "../assets/icons/circle-check.svg";
 import BookIcon from "../assets/icons/book-open.svg";
 import ShieldIcon from "../assets/icons/shield-check.svg";
 import ClockIcon from "../assets/icons/clock.svg";
+import PageHeader from "../components/shared/PageHeader.astro";
 ---
 
 <Layout
@@ -13,18 +14,11 @@ import ClockIcon from "../assets/icons/clock.svg";
   description="Learn about Kids Kave Junior School, our values, learning approach, and commitment to nurturing well-rounded learners in Mukono."
 >
 
-  <!-- ================= HERO ================= -->
-  <section class="border-b border-border bg-bg-soft py-16 sm:py-20">
-    <div class="mx-auto max-w-2xl px-4 text-center">
-      <h1 class="font-heading text-4xl sm:text-5xl font-bold text-heading">
-        A Nurturing Community for Young Learners
-      </h1>
-      <p class="mt-4 text-lg text-text-muted">
-        We create a safe, inspiring environment where children grow academically,
-        socially, and emotionally.
-      </p>
-    </div>
-  </section>
+<PageHeader
+title="A Nurturing Community for Young Learners" 
+    subtitle="We create a safe, inspiring environment where children grow academically, socially, and emotionally." />
+
+
 
     <!-- ================= VISION & MISSION ================= -->
   <section class="py-16 sm:py-20 border-t border-border bg-bg">
@@ -60,7 +54,7 @@ import ClockIcon from "../assets/icons/clock.svg";
 
 
   <!-- ================= OUR APPROACH ================= -->
-  <section class="py-16 sm:py-20">
+  <section class="py-16 sm:py-20 bg-gradient-to-br from-bg-soft to-bg-alt">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-2 gap-12 items-center">
 

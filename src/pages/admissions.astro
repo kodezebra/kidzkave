@@ -6,25 +6,19 @@ import PhoneIcon from "../assets/icons/phone.svg";
 import MapIcon from "../assets/icons/map-pin.svg";
 import FileIcon from "../assets/icons/file-text.svg";
 import CheckIcon from "../assets/icons/circle-check.svg";
+import PageHeader from "../components/shared/PageHeader.astro";
 ---
 
 <Layout
   title="Admissions | Kids Kave Junior School"
   description="Join Kids Kave Junior School. Learn about our simple, supportive admissions process and how to enroll your child."
 >
+<PageHeader 
+title="Join Our School"
+subtitle={`We welcome you to the Kids Kave Junior School family. Our admissions
+        process is simple, supportive, and parent-friendly.`}/>
 
-  <!-- ================= HERO ================= -->
-  <section class="border-b border-border bg-bg-soft py-16 sm:py-20">
-    <div class="mx-auto max-w-2xl px-4 text-center">
-      <h1 class="font-heading text-4xl sm:text-5xl font-bold text-heading">
-        Join Our School
-      </h1>
-      <p class="mt-4 text-lg leading-8 text-text-muted">
-        We welcome you to the Kids Kave Junior School family. Our admissions
-        process is simple, supportive, and parent-friendly.
-      </p>
-    </div>
-  </section>
+ 
 
   <!-- ================= ADMISSIONS PROCESS ================= -->
   <section class="py-16 sm:py-20">
@@ -131,8 +125,9 @@ import CheckIcon from "../assets/icons/circle-check.svg";
     </div>
   </section>
 
-  <!-- ================= FEES ================= -->
-<section class="py-16 sm:py-20">
+
+<!-- ================= FEES ================= -->
+<section class="py-16 sm:py-20 bg-gradient-to-br from-bg-soft to-bg-alt">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
     <!-- Header -->
@@ -146,102 +141,134 @@ import CheckIcon from "../assets/icons/circle-check.svg";
       </p>
     </div>
 
-    <!-- One-time Fees -->
+    <!-- ===== One-time Fees ===== -->
     <div class="mb-12">
       <h3 class="font-heading text-xl font-bold text-heading mb-4">
         One-Time / Annual Fees
       </h3>
 
-      <div class="overflow-hidden rounded-2xl border border-border">
-        <table class="w-full text-left border-collapse">
-          <thead class="bg-bg-soft">
+      <div class="overflow-hidden rounded-2xl border border-border/60 bg-white shadow-sm">
+        <table class="w-full border-collapse text-left">
+          <thead class="bg-secondary text-secondary">
             <tr>
-              <th class="px-6 py-4 font-semibold text-heading">Item</th>
-              <th class="px-6 py-4 font-semibold text-heading">Amount (UGX)</th>
+              <th class="px-6 py-4 text-sm font-semibold text-heading">
+                Item
+              </th>
+              <th class="px-6 py-4 text-sm font-semibold text-heading text-right">
+                Amount (UGX)
+              </th>
             </tr>
           </thead>
-          <tbody class="divide-y divide-border">
-            <tr>
-              <td class="px-6 py-4">Registration (Nursery – P7)</td>
-              <td class="px-6 py-4 font-medium">20,000</td>
+
+          <tbody class="divide-y divide-border/40">
+            <tr class="hover:bg-bg-soft transition-colors">
+              <td class="px-6 py-4">
+                Registration (Nursery – P7)
+              </td>
+              <td class="px-6 py-4 font-medium text-right tabular-nums">
+                20,000
+              </td>
             </tr>
-            <tr>
+
+            <tr class="hover:bg-bg-soft transition-colors">
               <td class="px-6 py-4">School Uniform</td>
-              <td class="px-6 py-4 font-medium">150,000</td>
+              <td class="px-6 py-4 font-medium text-right tabular-nums">
+                150,000
+              </td>
             </tr>
           </tbody>
         </table>
       </div>
     </div>
 
-    <!-- Term Fees -->
+    <!-- ===== Term Fees ===== -->
     <div class="mb-12">
       <h3 class="font-heading text-xl font-bold text-heading mb-4">
         Termly School Fees
       </h3>
 
-      <div class="overflow-hidden rounded-2xl border border-border">
-        <table class="w-full text-left border-collapse">
-          <thead class="bg-bg-soft">
+      <div class="overflow-hidden rounded-2xl border border-border/60 bg-white shadow-sm">
+        <table class="w-full border-collapse text-left">
+          <thead class="bg-secondary text-secondary">
             <tr>
-              <th class="px-6 py-4 font-semibold text-heading">Section</th>
-              <th class="px-6 py-4 font-semibold text-heading">Amount (UGX)</th>
+              <th class="px-6 py-4 text-sm font-semibold text-heading">
+                Section
+              </th>
+              <th class="px-6 py-4 text-sm font-semibold text-heading text-right">
+                Amount (UGX)
+              </th>
             </tr>
           </thead>
-          <tbody class="divide-y divide-border">
-            <tr>
+
+          <tbody class="divide-y divide-border/40">
+            <tr class="hover:bg-bg-soft transition-colors">
               <td class="px-6 py-4">Nursery</td>
-              <td class="px-6 py-4 font-medium">250,000</td>
+              <td class="px-6 py-4 font-medium text-right tabular-nums">
+                250,000
+              </td>
             </tr>
-            <tr>
+
+            <tr class="hover:bg-bg-soft transition-colors">
               <td class="px-6 py-4">Primary (P1 – P7)</td>
-              <td class="px-6 py-4 font-medium">350,000</td>
+              <td class="px-6 py-4 font-medium text-right tabular-nums">
+                350,000
+              </td>
             </tr>
           </tbody>
         </table>
       </div>
     </div>
 
-    <!-- Optional Services -->
+    <!-- ===== Optional Services ===== -->
     <div class="mb-12">
       <h3 class="font-heading text-xl font-bold text-heading mb-4">
         Optional Services
       </h3>
 
-      <div class="overflow-hidden rounded-2xl border border-border">
-        <table class="w-full text-left border-collapse">
-          <thead class="bg-bg-soft">
+      <div class="overflow-hidden rounded-2xl border border-border/60 bg-white shadow-sm">
+        <table class="w-full border-collapse text-left">
+          <thead class="bg-secondary text-secondary">
             <tr>
-              <th class="px-6 py-4 font-semibold text-heading">Service</th>
-              <th class="px-6 py-4 font-semibold text-heading">Cost</th>
+              <th class="px-6 py-4 text-sm font-semibold text-heading">
+                Service
+              </th>
+              <th class="px-6 py-4 text-sm font-semibold text-heading text-right">
+                Cost
+              </th>
             </tr>
           </thead>
-          <tbody class="divide-y divide-border">
-            <tr>
+
+          <tbody class="divide-y divide-border/40">
+            <tr class="hover:bg-bg-soft transition-colors">
               <td class="px-6 py-4">Lunch Program</td>
-              <td class="px-6 py-4 font-medium">100,000</td>
+              <td class="px-6 py-4 font-medium text-right tabular-nums">
+                100,000
+              </td>
             </tr>
-            <tr>
+
+            <tr class="hover:bg-bg-soft transition-colors">
               <td class="px-6 py-4">School Transport</td>
-              <td class="px-6 py-4 font-medium">Depends on distance</td>
+              <td class="px-6 py-4 font-medium text-right">
+                Depends on distance
+              </td>
             </tr>
           </tbody>
         </table>
       </div>
     </div>
 
-    <!-- Included Extras -->
-    <div class="rounded-2xl bg-bg-soft p-8 text-center">
-      <h3 class="font-heading text-xl font-bold text-heading mb-4">
+    <!-- ===== Included Extras ===== -->
+    <div class="bg-primary rounded-2xl border border-primary/20 bg-primary/10 p-8 text-center">
+      <h3 class="font-heading text-xl font-bold text-heading mb-4 text-white ">
         Included at No Extra Cost
       </h3>
 
-      <ul class="flex flex-col sm:flex-row justify-center gap-6 text-text-muted font-medium">
+      <ul class="flex flex-col sm:flex-row justify-center gap-6 font-medium text-heading text-white">
         <li>✓ Swimming Lessons</li>
         <li>✓ Bouncing Castle Activities</li>
       </ul>
 
-      <p class="mt-4 text-sm text-text-muted">
+      <p class="mt-4 text-sm text-accent">
         These activities are included to support physical development and fun
         learning experiences.
       </p>
@@ -249,6 +276,7 @@ import CheckIcon from "../assets/icons/circle-check.svg";
 
   </div>
 </section>
+
 
 
   <!-- ================= CAMPUS IMAGE ================= -->

@@ -6,6 +6,7 @@ import BabyIcon from "../assets/icons/baby.svg";
 import BlocksIcon from "../assets/icons/blocks.svg";
 import BookIcon from "../assets/icons/book-open.svg";
 import LeafIcon from "../assets/icons/sprout.svg";
+import PageHeader from "../components/shared/PageHeader.astro";
 ---
 
 <Layout
@@ -14,17 +15,10 @@ import LeafIcon from "../assets/icons/sprout.svg";
 >
 
   <!-- ================= HERO ================= -->
-  <section class="border-b border-border bg-bg-soft py-16 sm:py-20">
-    <div class="mx-auto max-w-2xl px-4 text-center">
-      <h1 class="font-heading text-4xl sm:text-5xl font-bold text-heading">
-        Our Academic Programs
-      </h1>
-      <p class="mt-4 text-lg leading-8 text-text-muted">
-        Quality care, the UNEB curriculum, and a holistic approach — supporting
-        every stage of early learning.
-      </p>
-    </div>
-  </section>
+  <PageHeader
+title="Our Academic Programs"
+subtitle={`Quality care, the UNEB curriculum, and a holistic approach — supporting
+        every stage of early learning.`}/>
 
   <!-- ================= DAYCARE ================= -->
   <section class="py-16 sm:py-20">

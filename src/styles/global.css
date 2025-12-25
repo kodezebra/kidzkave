@@ -1,22 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import "tailwindcss";
 
-/* ======================================================
-   DESIGN TOKENS (TAILWIND v4) - VIBRANT & EDUCATIONAL PALETTE
-====================================================== */
+
 
 @theme {
-  --color-primary: hsl(216 85% 50%);     /* Bright blue - energetic & trustworthy */
-  --color-secondary: hsl(45 95% 60%);    /* Warm yellow - cheerful & engaging */
-  --color-accent: hsl(340 75% 60%);      /* Vibrant pink - playful & attention-grabbing */
+ --color-primary: #0F2A7A;   /* Deep blue – trust, education */
+  --color-secondary: #63C132; /* Bright green – growth, kids */
+  --color-accent: #F5C542;    /* Star yellow – excellence */
   
-  --color-bg: hsl(210 40% 98%);
-  --color-bg-soft: hsl(210 30% 96%);
+   /* Softer backgrounds to reduce eye strain */
+  --color-bg: hsl(210 40% 98%);         /* Very light blue-tinted white */
+  --color-bg-soft: hsl(210 30% 96%);    /* Light blue-tinted background */
+  --color-bg-alt: hsl(210 25% 94%);     /* Slightly darker blue-tinted background */
+  --color-bg-warm: hsl(45 25% 96%);     /* Very light yellow-tinted background */
   --color-heading: hsl(222 47% 11%);
   --color-text: hsl(215 25% 27%);        /* Darker for better readability */
   --color-border: hsl(214 32% 91%);
 
-  --font-sans: "Inter", system-ui, sans-serif;
-  --font-heading: "Libre Baskerville", serif;
+  --font-sans: "Lato", system-ui, sans-serif;
+  --font-heading: "Fredoka", sans-serif;
 
   --radius-md: 0.5rem;
 }

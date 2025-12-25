@@ -1,18 +1,39 @@
 ---
-interface Props {
-  title: string;
-  subtitle?: string;
+// src/components/PageHeader.astro
+import logoPath from '../../assets/logo.svg';
+
+export interface Props {
+    title: string;
+    subtitle: string;
 }
 
 const { title, subtitle } = Astro.props;
 ---
-<section class="border-b border-border bg-bg-soft py-16 sm:py-20">
-  <div class="mx-auto max-w-2xl px-4 text-center sm:px-6 lg:px-8">
-    <h1 class="font-heading text-4xl font-bold text-heading sm:text-5xl">
-      {title}
-    </h1>
-    {subtitle && (
-      <p class="mt-4 text-lg leading-8 text-text-muted">{subtitle}</p>
-    )}
+
+<section class="border-b border-border bg-bg-soft py-16 sm:py-20 lg:py-24">
+  <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+
+    <div class="grid grid-cols-1 md:grid-cols-[150px_1fr] items-center md:items-start gap-8 md:gap-12 text-center md:text-left">
+
+      <img 
+        src={logoPath.src} 
+        alt="Company Logo" 
+        class="w-32 h-auto justify-self-center md:justify-self-start opacity-15
+    grayscale" 
+        width={logoPath.width}
+        height={logoPath.height}
+      />
+
+      <!-- The Text Content -->
+      <div>
+        <h1 class="font-heading text-4xl sm:text-5xl font-bold text-heading">
+          {title}
+        </h1>
+        <p class="mt-4 text-lg text-text-muted">
+          {subtitle}
+        </p>
+      </div>
+
+    </div>
   </div>
 </section>

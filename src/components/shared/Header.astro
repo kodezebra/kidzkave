@@ -1,4 +1,7 @@
 ---
+// 1. Import the SVG file from your assets folder
+import Logo from '../../assets/logo.svg';
+
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "About Us", href: "/about" },
@@ -8,7 +11,8 @@ const navLinks = [
 ];
 ---
 
-<header class="sticky top-0 z-50 bg-bg/90 backdrop-blur border-b border-border">
+
+<header class="sticky top-0 z-50 bg-bg/90 backdrop-blur border-b border-border shadow-sm">
   <nav
     class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between"
     aria-label="Main navigation"
@@ -16,19 +20,21 @@ const navLinks = [
     <!-- Logo -->
     <a
       href="/"
-      class="flex items-center gap-2 font-heading text-lg font-bold text-primary"
+      class="flex items-center gap-2 font-heading text-lg font-bold text-primary hover:opacity-80 transition-opacity"
+      aria-label="Kids Kave Junior School - Home"
     >
-      <img src="/logo.svg" alt="Kids Kave Junior School SVG Logo" class="h-10 w-10">
+      <!-- Use h-14 w-14 for the perfect middle ground -->
+      <Logo class="h-14 w-14" />
       <span>Kids Kave</span>
     </a>
 
-    <!-- Navigation -->
+    <!-- Desktop Navigation -->
     <ul class="hidden md:flex items-center gap-8">
       {navLinks.map(link => (
         <li>
           <a
             href={link.href}
-            class="text-sm font-medium text-text hover:text-primary transition"
+            class="text-md font-medium text-text hover:text-primary transition-colors relative after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all hover:after:w-full"
           >
             {link.name}
           </a>
@@ -36,12 +42,77 @@ const navLinks = [
       ))}
     </ul>
 
-    <!-- CTA -->
-    <a
-      href="/admissions"
-      class="hidden md:inline-flex items-center rounded-md bg-primary px-4 py-2 text-sm font-semibold text-white hover:bg-primary/90 transition"
+    <!-- CTA Button -->
+    <div class="hidden md:flex items-center gap-4">
+      <a
+        href="/admissions"
+        class="inline-flex items-center rounded-md bg-primary px-4 py-2 text-base font-semibold text-white hover:bg-primary/90 transition-colors shadow-sm hover:shadow-md"
+      >
+        Enroll Now
+      </a>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button
+      class="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1.5 text-text hover:text-primary focus:outline-none"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+      aria-label="Toggle navigation menu"
     >
-      Enroll Now
-    </a>
+      <span class="block w-6 h-0.5 bg-current transition-transform"></span>
+      <span class="block w-6 h-0.5 bg-current transition-opacity"></span>
+      <span class="block w-6 h-0.5 bg-current transition-transform"></span>
+    </button>
   </nav>
+
+  <!-- Mobile Menu (Hidden by default) -->
+  <div id="mobile-menu" class="hidden md:hidden bg-bg border-b border-border">
+    <div class="px-4 py-2 space-y-1">
+      {navLinks.map(link => (
+        <a
+          href={link.href}
+          class="block px-3 py-2 text-base font-medium text-text hover:bg-bg-secondary hover:text-primary rounded-md transition-colors"
+        >
+          {link.name}
+        </a>
+      ))}
+      <div class="pt-4 pb-2">
+        <a
+          href="/admissions"
+          class="block w-full text-center bg-primary text-white px-4 py-2 rounded-md font-semibold hover:bg-primary/90 transition-colors"
+        >
+          Enroll Now
+        </a>
+      </div>
+    </div>
+  </div>
 </header>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const menuButton = document.querySelector('button[aria-controls="mobile-menu"]');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (menuButton && mobileMenu) {
+      menuButton.addEventListener('click', () => {
+        const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+        
+        menuButton.setAttribute('aria-expanded', `${!isExpanded}`);
+        
+        mobileMenu.classList.toggle('hidden');
+        
+        // Animate hamburger menu
+        const spans = menuButton.querySelectorAll('span');
+        if (!isExpanded) {
+          spans[0].classList.add('rotate-45', 'translate-y-2');
+          spans[1].classList.add('opacity-0');
+          spans[2].classList.add('-rotate-45', '-translate-y-2');
+        } else {
+          spans[0].classList.remove('rotate-45', 'translate-y-2');
+          spans[1].classList.remove('opacity-0');
+          spans[2].classList.remove('-rotate-45', '-translate-y-2');
+        }
+      });
+    }
+  });
+</script>
