@@ -2,6 +2,13 @@
 import Layout from "../layouts/Layout.astro";
 import CallToAction from "../components/home/CallToAction.astro";
 
+/* IMAGE IMPORTS */
+import GroupImage from "../assets/images/group.jpg";
+import Nusarymage from "../assets/images/babyclass.jpg";
+import PoseImage from "../assets/images/pose.jpg";
+import HeroImage from "../assets/images/hero.jpg";
+
+
 import BabyIcon from "../assets/icons/baby.svg";
 import BlocksIcon from "../assets/icons/blocks.svg";
 import BookIcon from "../assets/icons/book-open.svg";
@@ -28,7 +35,7 @@ subtitle={`Quality care, the UNEB curriculum, and a holistic approach — suppor
         <!-- Image -->
         <div class="relative rounded-2xl overflow-hidden shadow-lg aspect-[4/3]">
           <img
-            src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c"
+            src={Nusarymage.src}
             alt="Daycare and early years care"
             class="absolute inset-0 w-full h-full object-cover"
             loading="lazy"
@@ -66,7 +73,7 @@ subtitle={`Quality care, the UNEB curriculum, and a holistic approach — suppor
         <!-- Image -->
         <div class="relative lg:col-start-2 rounded-2xl overflow-hidden shadow-lg aspect-[4/3]">
           <img
-            src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf"
+            src={GroupImage.src}
             alt="Nursery learning environment"
             class="absolute inset-0 w-full h-full object-cover"
             loading="lazy"
@@ -104,7 +111,7 @@ subtitle={`Quality care, the UNEB curriculum, and a holistic approach — suppor
         <!-- Image -->
         <div class="relative rounded-2xl overflow-hidden shadow-lg aspect-[4/3]">
           <img
-            src="https://images.unsplash.com/photo-1588072432836-e10032774350"
+            src={PoseImage.src}
             alt="Primary school classroom learning"
             class="absolute inset-0 w-full h-full object-cover"
             loading="lazy"
@@ -142,7 +149,7 @@ subtitle={`Quality care, the UNEB curriculum, and a holistic approach — suppor
         <!-- Image -->
         <div class="relative lg:col-start-2 rounded-2xl overflow-hidden shadow-lg aspect-[4/3]">
           <img
-            src="https://images.unsplash.com/photo-1596495578065-6e0763fa1178"
+            src={HeroImage.src}
             alt="Practical and holistic learning activities"
             class="absolute inset-0 w-full h-full object-cover"
             loading="lazy"
