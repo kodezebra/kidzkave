@@ -1,8 +1,9 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import PageHeader from "../components/shared/PageHeader.astro";
-import FeatureSection from "../components/shared/FeatureSection.astro";
+import PhoneIcon from "../assets/icons/phone.svg";
+import WhatsappIcon from "../assets/icons/whatsapp.svg";
 import CallToAction from "../components/home/CallToAction.astro";
+import PageHeader from "../components/shared/PageHeader.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout
@@ -45,18 +46,22 @@ import CallToAction from "../components/home/CallToAction.astro";
           <!-- Call -->
           <div class="flex gap-4">
             <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-secondary/10">
-              <span class="text-secondary font-bold">📞</span>
+              <PhoneIcon class="w-5 h-5 text-secondary" />
             </div>
             <div>
               <h2 class="font-heading text-xl font-bold text-heading">
                 Call Us
               </h2>
-              <p class="mt-1 text-text-muted">
-                <a href="tel:+256784607792" class="hover:text-primary block">
-                  +256 784 607 792
+              <p class="mt-1 text-text-muted flex items-center gap-2">
+                <WhatsappIcon class="w-4 h-4 text-green-500" />
+                <a href="tel:0786501757" class="hover:text-primary block">
+                  0786501757 (WhatsApp)
                 </a>
-                <a href="tel:+256752214450" class="hover:text-primary block">
-                  +256 752 214 450
+              </p>
+              <p class="mt-1 text-text-muted flex items-center gap-2">
+                <PhoneIcon class="w-4 h-4 text-secondary" />
+                <a href="tel:0756764701" class="hover:text-primary block">
+                  0756 764 701
                 </a>
               </p>
             </div>

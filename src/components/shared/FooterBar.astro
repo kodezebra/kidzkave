@@ -1,0 +1,26 @@
+---
+import FacebookIcon from '../../assets/icons/facebook.svg?raw';
+import InstagramIcon from '../../assets/icons/instagram.svg?raw';
+import XIcon from '../../assets/icons/x.svg?raw';
+
+const SOCIAL_LINKS = [
+  { href: '#', icon: FacebookIcon, label: 'Facebook' },
+  { href: 'https://instagram.com/kids.kave.nursery', icon: InstagramIcon, label: 'Instagram' },
+  { href: '#', icon: XIcon, label: 'X' },
+]
+---
+<div class="bg-slate-900 text-white">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 flex flex-col items-center justify-between sm:flex-row">
+    <p class="text-sm">
+      © {new Date().getFullYear()} Kids Kave Junior School. All rights reserved.
+    </p>
+    <div class="mt-4 flex items-center space-x-4 sm:mt-0">
+      {SOCIAL_LINKS.map(link => (
+        <a href={link.href} class="text-white hover:text-primary">
+          <Fragment set:html={link.icon} />
+          <span class="sr-only">{link.label}</span>
+        </a>
+      ))}
+    </div>
+  </div>
+</div>

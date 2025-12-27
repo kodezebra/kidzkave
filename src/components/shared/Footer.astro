@@ -3,6 +3,8 @@ import { NAV_LINKS } from '../../utils/navigation';
 import FacebookIcon from '../../assets/icons/facebook.svg?raw';
 import InstagramIcon from '../../assets/icons/instagram.svg?raw';
 import XIcon from '../../assets/icons/x.svg?raw';
+import PhoneIcon from '../../assets/icons/phone.svg';
+import WhatsappIcon from '../../assets/icons/whatsapp.svg';
 
 const SOCIAL_LINKS = [
   { href: '#', icon: FacebookIcon, label: 'Facebook' },
@@ -31,25 +33,18 @@ const SOCIAL_LINKS = [
         <h3 class="font-semibold text-heading">Contact Us</h3>
         <address class="mt-4 space-y-2 not-italic text-sm text-text-muted">
           <p>Mukono, Namumira</p>
-          <p>
-            <a href="tel:+256784607792" class="hover:text-primary">+256 784 607 792</a>
-          </p>
+          <div class="flex items-center gap-2">
+            <WhatsappIcon class="w-4 h-4 text-green-500" />
+            <a href="tel:0786501757" class="hover:text-primary">0786501757</a>
+          </div>
+          <div class="flex items-center gap-2">
+            <PhoneIcon class="w-4 h-4 text-primary" />
+            <a href="tel:0756764701" class="hover:text-primary">0756 764 701</a>
+          </div>
         </address>
       </div>
     </div>
-    <div class="flex flex-col items-center justify-between border-t border-border py-6 sm:flex-row">
-      <p class="text-sm text-text-muted">
-        © {new Date().getFullYear()} Kids Kave Junior School. All rights reserved.
-      </p>
-      <div class="mt-4 flex items-center space-x-4 sm:mt-0">
-        {SOCIAL_LINKS.map(link => (
-          <a href={link.href} class="text-text-muted hover:text-primary">
-            <Fragment set:html={link.icon} />
-            <span class="sr-only">{link.label}</span>
-          </a>
-        ))}
-      </div>
-    </div>
+
   </div>
 </footer>
 
